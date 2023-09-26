@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Ürün Yönetimi</title>
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+  <div class="products-page">
+    <%- include('blocks/header') -%>
+  <ul class="products">
+    <% products.forEach(product => { %>
+      <li class="product">
+        <div class="product-content">
+          <strong class="product-title"><%= product.title %></strong>
+          <div class="product-name">
+            <span><%= product.brand %></span>
+            - <%= product.model %>
+          </div>
+        </div>
+         <div class="buttons">
+          <button class="btn">
+            <a href="/products/edit/<%= product.id %>">Edit</a>
+          </button>
+         <button class="btn">
+            <a href="/products/delete/<%= product.id %>">Delete</a>
+         </button>
+         </div>
+      </li>
+    <% }); %>
+  </ul>
+  </div>
+</body>
+</html>

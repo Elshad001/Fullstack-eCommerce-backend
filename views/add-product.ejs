@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Yeni Ürün Ekle</title>
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
+
+<body>
+  <%- include('blocks/header') -%>
+    <div class="add-page">
+      <h3>Add new product</h3>
+      <form action="/products/add" method="POST" class="add-form">
+        <div>
+          <label for="title">Title:</label>
+          <input type="text" name="title" required><br>
+
+          <label for="brand">Brand:</label>
+          <input type="text" name="brand" required><br>
+
+          <label for="model">Model:</label>
+          <input type="text" name="model" required><br>
+
+          <label for="image">Image URL:</label>
+          <input type="text" name="image" required><br>
+
+          <label for="price">Price:</label>
+          <input type="number" name="price" required><br>
+        </div>
+        <button type="submit">Add</button>
+      </form>
+    </div>
+</body>
+
+</html>
